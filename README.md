@@ -83,13 +83,51 @@ Note: Keep all the switch faults in off position
 <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/7bc77926-9c2a-42c6-994b-6c67433b11d2" />
 
 ## PROGRAM:
- 
+ clc;
+clear;
+close;
+Ac=14.8;
+Am=7.4;
+Fc=4000;
+Fm=400;
+Fs=40000;
+t=0:1/Fs:2/Fm;
+E1=Am*sin(2*%pi*Fm*t);
+subplot(4,1,1);
+plot(t,E1);
+xlabel("Time(s");
+ylabel("Amplitude");
+title("Message Signal");
+E2=Ac*sin(2*%pi*Fc*t);
+subplot(4,1,2);
+plot(t,E2);
+xlabel("Time(s");
+ylabel("Amplitude");
+title("Carrier Signal");
+E3=(Ac+Am*sin(2*%pi*Fm*t)).*sin(2*%pi*Fc*t);
+subplot(4,1,3);
+plot(t,E3);
+xlabel("Time(s");
+ylabel("Amplitude");
+title("AM Signal");
+demodulated_signal=abs(hilbert(E3))-Ac;
+subplot(4,1,4);
+plot(t,demodulated_signal);
+xlabel("Time(s");
+ylabel("Amplitude");
+title("Demodulated Signal");
+xgrid();
+
 ## TABULATION:
+![WhatsApp Image 2025-11-18 at 19 16 33_4d1cc5c6](https://github.com/user-attachments/assets/06aa891a-718f-4bc6-8ecb-78cb062dca1c)
 
 ## CALCULATION:
+![WhatsApp Image 2025-11-18 at 19 18 43_67d4f406](https://github.com/user-attachments/assets/7a1ae49c-b420-4c3f-81d3-6af37bd1ccb9)
 
 
 
 ## OUTPUT:
+<img width="1918" height="1198" alt="image" src="https://github.com/user-attachments/assets/3757113f-6461-4479-b0ce-6e6fa8379b65" />
 
 ## RESULT:
+Thus the amplitude modulation and demodulation is experimentally done and the output is verified.
