@@ -83,7 +83,8 @@ Note: Keep all the switch faults in off position
 <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/7bc77926-9c2a-42c6-994b-6c67433b11d2" />
 
 ## PROGRAM:
- clc;
+ ~~~
+clc;
 clear;
 close;
 Ac=14.8;
@@ -117,6 +118,7 @@ xlabel("Time(s");
 ylabel("Amplitude");
 title("Demodulated Signal");
 xgrid();
+~~~
 
 ## TABULATION:
 ![WhatsApp Image 2025-11-18 at 19 16 33_4d1cc5c6](https://github.com/user-attachments/assets/06aa891a-718f-4bc6-8ecb-78cb062dca1c)
